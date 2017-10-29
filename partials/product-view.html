@@ -1,0 +1,39 @@
+<p id="product-text"> Single Product details would be Present over Here </p>   <!-- data collected in product view controller is displayed her -->
+
+<div class="row">
+
+<ratings>
+	
+    <div class="col-sm-4">
+
+    	<img src="{{x.productimage}}" alt="Product Image" height="500"  width="80%" style="margin:0 auto"/>
+
+    </div>
+    
+    <div class="col-sm-4">
+ 
+       <h2>{{x.productname}}</h2>
+
+       <p style="margin-top:30px;">Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+           sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </p>   
+
+       <div class="row" style="margin-top:30px;">
+                        <div class="col-xs-12 col-md-4">
+                            <a class="btn btn-danger" ng-click="downvote()">Downvote</a>
+                            <span> {{x.downvotes}} </span>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <a class="btn btn-success" ng-click="upvote()">Upvote</a>
+                            <span> {{x.upvotes}} </span>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                        	<span>Rating:{{x.stars}}</span>
+                        <div>
+                    </div>
+
+    </div>	
+
+</ratings>
+
+</div>

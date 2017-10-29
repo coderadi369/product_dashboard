@@ -1,0 +1,44 @@
+
+<div id="product-text">   <!-- all the data present un productlist controller is iterated and printed in this page by means of a ratings directive -->
+
+<input type="text" ng-model="test" placeholder="search Products"/>
+ <a ui-sref="newproduct">Add New Product</a>
+
+</div>
+
+<div class="row" id="products">
+ <ratings class="list-group" ng-repeat="x in value" ng-init="outerIndex = $index">
+        <div class="item  col-xs-4 col-lg-4">
+            <div class="thumbnail">
+                <img class="group list-group-image" src="{{x.productimage}}" alt="" height="300" width="200" />
+                <div class="caption">
+                    <h4 class="group inner list-group-item-heading">
+                        {{x.productname}}
+                    </h4>
+                    <p class="group inner list-group-item-text">
+                        Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                        sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-4">
+                            <a class="btn btn-danger" ng-click="downvote(outerIndex)">Downvote</a>
+                            <span> {{x.downvotes}} </span>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                            <a class="btn btn-success" ng-click="upvote(outerIndex)">Upvote</a>
+                            <span> {{x.upvotes}} </span>
+                        </div>
+                        <div class="col-xs-12 col-md-4">
+                        	<span>Rating:{{x.stars}}</span>
+                        <div>
+                    </div>
+                    <div class="row">
+                    	<a ui-sref="productview({id:{{outerIndex}}})">Go to Product page</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+ </ratings>
+</div>
+
+
+
